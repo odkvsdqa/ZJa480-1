@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class ZJ_a480 {
+public static void main(String[] args){
+   Scanner s = new Scanner(System.in);
+   int x1[] = new int[2];
+   int y1[] = new int[2];
+   for(int i = 0;i < 2;i++){
+    x1[i] = s.nextInt();
+    y1[i] = s.nextInt();
+    System.out.println("");
+   }
+
+  System.out.println("請輸入想要防護的城鎮數量:");
+  int n = s.nextInt();
+  int x2[] = new int[n];
+  int y2[] = new int[n];
+  System.out.println("請輸入這些城鎮的座標分別為:");
+  for(int i = 0;i < n; i++ ){
+    x2[i] = s.nextInt();
+    y2[i] = s.nextInt();
+  }
+
+  int distance = 0;
+  double r1 = 0;
+  double r2 =0;
+  double r3 = 0;
+
+    for(int j = 0 ;j < n;j++){
+        distance = ((x1[0] - x2[j])*(x1[0] - x2[j]))+((y1[0] - y2[j])*(y1[0] - y2[j]));
+        double distance_sqrt = Math.sqrt(distance);
+        r1 = distance_sqrt;
+        if(r2 < r1){
+            r3 = distance_sqrt;
+        }
+        r2 = r1;
+    }
+    System.out.println(r3);
+
+    double r4 =0;
+    for(int j = 0 ;j < n;j++){
+        distance = ((x1[1] - x2[j])*(x1[1] - x2[j]))+((y1[1] - y2[j])*(y1[1] - y2[j]));
+        double distance_sqrt = Math.sqrt(distance);
+        r1 = distance_sqrt;
+        if(r2 < r1){
+            r4 = distance_sqrt;
+        }
+        r2 = r1;
+    }
+
+    System.out.println(r4);
+
+
+
+  System.out.println("輸出能源最小值為:"+r3);
+ }
+}
