@@ -1,0 +1,37 @@
+template>
+    <main class="container mx-auto bg-amber-200">
+        <section class="flex px-6 py-2">
+            <input type="text" class="input text-4xl w-full">
+            <button @click="addTodo" class="btn mx-2 btn-sucess">+</button>
+        </section>
+        <section>
+          <ul>
+            <li v-for="todo in todos">{{ todo }}</li>
+          </ul>
+        </section>
+    </main>
+  <!-- <h1 class="textcolor">Hello</h1>
+  <div class="flex">
+    <button class="p-4 bg-amber-500 w-full rounded">x</button>
+    <button class="btn btn-success">y</button>
+  </div> -->
+</template>
+
+<script setup>
+import { ref } from 'vue';
+// ref
+const todos = ref([1,2,3]);
+
+function addTodo(){
+    todos.value.push(1)
+    console.log(todos.value.push());
+}
+</script>
+
+ `bash
+  git reset --hard 0b6082e
+  `
+
+  `bash
+  git reset --hard 7328a45
+  `
